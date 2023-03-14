@@ -8,7 +8,8 @@
         Title="Сотрудники" Height="700" Width="650"
         Background="#99D9EA"
         Name="mainWindow"
-        MouseMove="Window_MouseMove">
+        MouseMove="Window_MouseMove"
+        Icon="Z:\Documents\thirdCourse\Практика_1\employe\employe\icon.ico">
     <Grid Margin="20 0 20 20" Background="#99D9EA">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -190,13 +191,5 @@
                 </Style>
             </Button.Style>
         </Button>
-        <!--<Canvas Grid.Row="10" Grid.Column="1" Margin="0 10 0 0"
-                VerticalAlignment="Center" 
-            HorizontalAlignment="Center"
-            RenderTransformOrigin="5, 5">
-            <Canvas.RenderTransform>
-                <ScaleTransform ScaleX="5" ScaleY="5" />
-            </Canvas.RenderTransform>
-        </Canvas>-->    
     </Grid>
 </Window>

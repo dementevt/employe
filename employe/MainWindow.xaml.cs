@@ -129,7 +129,7 @@ namespace employe
                 using (StreamWriter sw = new StreamWriter("Z:\\Documents\\thirdCourse\\Практика_1\\" +
                     "employe\\employe\\password.txt", true))
                 {
-                    sw.WriteLine($"{id}, {password}\n");
+                    sw.Write($"\n{id},{password}");
 
                 }
 

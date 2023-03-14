@@ -28,7 +28,37 @@ namespace employe
     {
         private Timer idleTimer2; // таймер простоя
         private const int idleTime2 = 60; // время простоя в секундах
+        public AuthWindow()
+        {
+            InitializeComponent();
 
+            // Добавляем обработчики событий кнопок и текстовых полей
+            btnLogin.Click += ResetIdleTimer;
+            idTextBox.TextChanged += ResetIdleTimer;
+            passwordTextBox.PasswordChanged += ResetIdleTimer;
+
+            // Запускаем таймер простоя
+            idleTimer2 = new Timer(idleTime2 * 1000);
+            idleTimer2.Elapsed += IdleTimerElapsed;
+            idleTimer2.AutoReset = true;
+            idleTimer2.Start();
+        }
+
+        private void ResetIdleTimer(object sender, EventArgs e)
+        {
+            // Обнуляем таймер простоя
+            idleTimer2.Stop();
+            idleTimer2.Start();
+        }
+        private void IdleTimerElapsed([DisallowNull] object sender2, ElapsedEventArgs e)
+        {
+            // Вызываем диалоговое окно напоминания о неиспользовании приложения
+            Dispatcher.Invoke(() => MessageBox.Show("Внимание! Вы неактивны более одной " +
+                "минуты. Вы можете закрыть приложение.", "Напоминание",
+                MessageBoxButton.OK, MessageBoxImage.Information));
+
+        }
+        /*
         public AuthWindow()
         {
             InitializeComponent(); 
@@ -71,7 +101,7 @@ namespace employe
                 idleTimer2.Stop();
             }
 
-        }
+        }*/
 
         private int remainingAttempts = 3;
         private DateTime? lockoutEndTime = null;
@@ -95,10 +125,10 @@ namespace employe
                 //Останвливаем таймер простоя
                 idleTimer2.Stop();
                 MessageBox.Show($"Вы успешно вошли!");
+                MainWindow mainWindow = new ();
+                mainWindow.Show();
                 this.Close();
-                GraphWindow graphWindow = new ();
-                graphWindow.Show();
-                graphWindow.Close();
+                
             }
             else
             {
@@ -150,43 +180,7 @@ namespace employe
                  }
             }
         }
-        /*
-        public List<string> ReadEmployeePasswordFromFile()
-        {
-            List<string> passwords = new List<string>();
-            using (StreamReader sr = new StreamReader("Z:\\Documents\\thirdCourse\\Практика_1\\" +
-                "employe\\employe\\password.txt"))
-            {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    string[] fields = line.Split('\n');
-                    string id = fields[0].Trim();
-                    passwords.Add(id);
-                }
-            }
-            return passwords;
-        }
-
-        private bool CheckAuthorization(string login, string password)
-        {
-            
-            string userLogin = "admin";
-            string userPassword = "0000";
-
-            List<string> employesPasswords = ReadEmployeePasswordFromFile();
-            foreach(string )
-            if (login == userLogin && password == userPassword)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
-            
-        }*/
+        
 
         public Dictionary<string, string> ReadEmployeeIdAndPasswordFromFile()
         {
@@ -212,7 +206,7 @@ namespace employe
         private bool CheckAuthorization(string login, string password)
         {
             Dictionary<string, string> employees = ReadEmployeeIdAndPasswordFromFile();
-            if (employees.ContainsKey(login) && employees[password] == password)
+            if (employees.ContainsKey(login) && employees[login] == password)
             {
                 return true;
             }

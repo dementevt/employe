@@ -8,7 +8,7 @@
         Name="authWindow"
         Title="Авторизация" Height="260" Width="350"
         Background="#99D9EA"
-        MouseMove="AuthWindow_MouseMove">
+        Icon="Z:\Documents\thirdCourse\Практика_1\employe\employe\logo.png">
     <Window.Resources>
         <SolidColorBrush x:Key="MainBrush" Color="#22B14C" />
         <SolidColorBrush x:Key="AccentBrush" Color="#FFF200" />
@@ -21,25 +21,25 @@
         <TextBlock Text="Введите свой id и пароль" Margin="10,5,10,25"
                        Foreground="#22B14C" FontFamily="Comic Sans MS"
                        FontSize="20" FontWeight="Bold"/>
-        <StackPanel Margin="50,50,50,10">
+        <StackPanel Margin="60,50,50,10">
 
             <StackPanel Orientation="Horizontal" Margin="0 25 0 10" >
-                <TextBlock Text="Id: " FontWeight="Bold" 
+                <TextBlock Text="Id:" FontWeight="Bold" 
                             VerticalAlignment="Center" FontSize="14"
                            Foreground="#22B14C" FontFamily="Comic Sans MS"/>
                 <TextBox x:Name="idTextBox" Width="150" VerticalAlignment="Center" 
-                         Margin="36 0 0 0" BorderBrush="#FF83E3AA" FontSize="13" />
+                         Margin="39 0 0 0" BorderBrush="#22B14C" FontSize="13" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                <TextBlock Text="Пароль: " FontWeight="Bold" 
+                <TextBlock Text="Пароль:" FontWeight="Bold" 
                             VerticalAlignment="Center" FontSize="14"
                            Foreground="#22B14C" FontFamily="Comic Sans MS" />
                 <PasswordBox x:Name="passwordTextBox" Width="150" VerticalAlignment="Center"
-                             BorderBrush="#22B14C" FontSize="13"/>
+                             Margin="3 0 0 0" BorderBrush="#22B14C" FontSize="13"/>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="btnLogin" Content="Войти" Margin="144,20,144,40" FontWeight="Bold"
-                Grid.Row="1" Click="btnLogin_Click" Background="{StaticResource AccentBrush}" 
+        <Button x:Name="btnLogin" Content="Войти" Margin="130,13,130,45" FontWeight="Bold"
+                Grid.Row="1" Click="btnLogin_Click" FontSize="14" Background="{StaticResource AccentBrush}" 
                 Foreground="Black" BorderBrush="{StaticResource AccentBrush}">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
@@ -55,7 +55,7 @@
         </Button>
         <Button x:Name="btnGoToMainWindow" Content="Зарегистрироваться" Width="Auto" 
                 Margin="112,60,112,10" FontWeight="Normal"
-                FontSize="10"
+                FontSize="12"
                 Grid.Row="1" Grid.Column="0" Click="btnGoToMainWindow_Click"
                 Opacity="20" 
                 Background="#99D9EA" 
