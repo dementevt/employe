@@ -265,27 +265,24 @@ namespace employe
             idleTimer.Stop();
         }
 
-
-        /*
-        private void DrawFunction()
+        private void GoToCircleWindow_Click(object sender, RoutedEventArgs e)
         {
-            Polyline polyline = new Polyline();
-            polyline.Stroke = Brushes.Blue;
-            polyline.StrokeThickness = 2;
+            prakt4 prakt4 = new();
+            prakt4.Show();
+            this.Close();
 
+            idleTimer.Stop();
 
-            double x = -2.0;
-            while (x <= 2.0)
-            {
-                double y = x * x;
-                Point point = new Point((x + 2.0) * 10, 20 - y * 10);
-                polyline.Points.Add(point);
-                x += 0.1;
-            }
+        }
 
-            canvas.Children.Add(polyline);
-        }*/
+        private void GoToKurganWindow_Click(object sender, RoutedEventArgs e)
+        {
+            KurganWindow kurgan = new();
+            kurgan.Show();
+            this.Close();
 
+            idleTimer.Stop();        
+        }
     }
 }
 

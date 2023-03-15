@@ -58,50 +58,6 @@ namespace employe
                 MessageBoxButton.OK, MessageBoxImage.Information));
 
         }
-        /*
-        public AuthWindow()
-        {
-            InitializeComponent(); 
-
-            idleTimer2 = new Timer(idleTime2 * 1000);
-            idleTimer2.Elapsed += IdleTimerElapsed;
-            idleTimer2.AutoReset = true;
-            idleTimer2.Start();
-        }
-        //
-        private void IdleTimerElapsed([DisallowNull] object sender2, ElapsedEventArgs e)
-        {
-                // Вызываем диалоговое окно напоминания о неиспользовании приложения
-                Dispatcher.Invoke(() => MessageBox.Show("Внимание! Вы неактивны более одной " +
-                    "минуты. Вы можете закрыть приложение.", "Напоминание",
-                    MessageBoxButton.OK, MessageBoxImage.Information));
-           
-        }
-
-        private void AuthWindow_MouseMove(object sender2, System.Windows.Input.MouseEventArgs e)
-        {
-            // Обнуляем таймер простоя
-            idleTimer2.Stop();
-            bool isAuthWindowOpen = false;
-
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window is AuthWindow && window.Name == "authWindow")
-                {
-                    isAuthWindowOpen = true;
-                    break;
-                }
-            }
-            if (isAuthWindowOpen)
-            {
-                idleTimer2.Start();
-            }
-            else
-            {
-                idleTimer2.Stop();
-            }
-
-        }*/
 
         private int remainingAttempts = 3;
         private DateTime? lockoutEndTime = null;
