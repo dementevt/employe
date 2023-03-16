@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:employe" 
         mc:Ignorable="d"
-        Title="Круглое окно" Height="250" Width="300" 
+        Title="Круглое окно" Height="250" Width="250" 
         AllowsTransparency="True" WindowStyle="None"
-        Background="Transparent">
+        Background="Transparent" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown">
     <Window.Template>
         <ControlTemplate TargetType="Window">
-            <Border Name="newBorder" CornerRadius="0,150,0,150"
-                    Opacity="0.7" Background="LightBlue">
+            <Border Name="newBorder" CornerRadius="150,150,150,150"
+                    Opacity="0.7" Background="Red">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
