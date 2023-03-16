@@ -55,7 +55,7 @@
         </Button>
         <Button x:Name="btnGoToMainWindow" Content="Зарегистрироваться" Width="Auto" 
                 Margin="112,60,112,10" FontWeight="Normal"
-                FontSize="12"
+                FontSize="11.5"
                 Grid.Row="1" Grid.Column="0" Click="btnGoToMainWindow_Click"
                 Opacity="20" 
                 Background="#99D9EA" 

@@ -5,54 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:employe"
         mc:Ignorable="d"
-        Title="GraphWindow" Height="400" Width="400">
+        Title="GraphWindow" Height="500" Width="500">
     <Window.Resources>
         <SolidColorBrush x:Key="MainBrush" Color="#22B14C" />
         <SolidColorBrush x:Key="AccentBrush" Color="#FFF200" />
     </Window.Resources>
-    <Grid>
-        
-        <!--Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>   Grid.Row="0" Grid.Column="0"-->
-        <Canvas  Margin="50 10 60 40"
-                VerticalAlignment="Center" 
-                HorizontalAlignment="Center"
-                RenderTransformOrigin="20, 20"
-                 Height="150">
-            <Canvas.RenderTransform>
-                <ScaleTransform ScaleX="10" ScaleY="10" />
-            </Canvas.RenderTransform>
-        </Canvas>
-        <Button x:Name="btnGoToMainWindow" Content="Войти" FontWeight="Bold"
-                Click="btnGoToMainWindow_Click"  
-                Foreground="Black" 
-                Margin="140,300,140,50">
+        <Image Name="image1" Grid.Row="0"></Image>
+        <Button x:Name="btnGoToMainWindow" Content="Назад" Width="Auto" 
+                Margin="170,40,170,10" FontWeight="Normal"
+                FontSize="14"
+                Grid.Row="1" Click="btnGoToMainWindow_Click"
+                Opacity="20" 
+                Background="#99D9EA" 
+                Foreground="Black" BorderBrush="#99D9EA">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="Foreground" Value="Yellow"/>
+                    <Setter Property="Background" Value="#FFFFF200"/>
+                    <Setter Property="Foreground" Value="White"/>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" 
-                                                    To="Transparent" Duration="0:0:0.5"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                            <Trigger.ExitActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" 
-                                                    To="#FF2E2E2E" Duration="0:0:0.5"/>
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.ExitActions>
+                            <Setter Property="Background" Value= "#22B14C"/>
                         </Trigger>
                     </Style.Triggers>
                 </Style>
